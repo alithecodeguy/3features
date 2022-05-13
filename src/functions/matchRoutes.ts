@@ -1,4 +1,7 @@
+//library
 import { Children } from "react";
+
+//function
 import compilePath from "./compilePath";
 
 export default function matchRoutes(children: any, location: string) {

@@ -1,5 +1,5 @@
 //library
-import { createContext } from "react";
+import { createContext, useContext } from "react";
 
 export type InternationalizationContextType = {
   lang: string;
@@ -13,5 +13,9 @@ const InternationalizationContext =
     setLang: (lang: string) => {},
     translate: (term: string) => "",
   });
+
+export function useInternationalizationContext() {
+  return useContext(InternationalizationContext);
+}
 
 export default InternationalizationContext;

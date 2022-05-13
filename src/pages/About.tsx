@@ -16,11 +16,18 @@ export default function About() {
   return (
     <div
       style={{
-        backgroundColor: "red",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        gap: "10px",
+        justifyContent: "center",
       }}
     >
-      <div>{`${translate("About")}`}</div>
-      <Link to="/">Home</Link>
+      <span style={{ fontSize: 14 }}>
+        {`${translate("PageNameLabel")}`} : {`${translate("About")}`}
+      </span>
+      <span style={{ fontSize: 32 }}>{`${translate("Welcome")}`}</span>
+      <Link to="/">home</Link>
     </div>
   );
 }

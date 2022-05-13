@@ -11,7 +11,29 @@ type Props = {
 function PrimaryLayout({ children }: Props) {
   const { lang, setLang, translate } = useInternationalizationContext();
   return (
-    <div style={{ display: "flex", flexDirection: "column" }}>
+    <main
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        backgroundColor: "#ccc",
+        minHeight: "100vh",
+      }}
+    >
+      <div
+        style={{
+          marginTop: 80,
+          width: "100vw",
+          height: 100,
+          backgroundColor: "#fff",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          padding: 10,
+          gap: 10,
+        }}
+      >
+        {children}
+      </div>
       <label>
         <input
           type="checkbox"
@@ -20,8 +42,7 @@ function PrimaryLayout({ children }: Props) {
         />
         {`${translate("changeLanguageButtonLabel") as string}`}
       </label>
-      <div>{children}</div>
-    </div>
+    </main>
   );
 }
 

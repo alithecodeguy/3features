@@ -1,4 +1,7 @@
 {
   "changeLanguageButtonLabel": "Change Language",
-  "About": "About"
+  "About": "About",
+  "Home": "Home",
+  "Welcome": "Welcome",
+  "PageNameLabel": "Page name"
 }

@@ -4,7 +4,6 @@
   align-items: center;
   padding-top: 80px;
   gap: 20px;
-  background-color: #ccc;
   min-height: 100vh;
   overflow: hidden;
 }
@@ -17,7 +16,7 @@
 .card {
   width: 100vw;
   height: 100px;
-  background-color: #fff;
+  background-color: #ccc;
   display: flex;
   justify-content: center;
   align-items: center;

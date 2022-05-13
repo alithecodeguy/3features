@@ -3,6 +3,11 @@ import { ReactNode } from "react";
 
 //hook
 import { useInternationalizationContext } from "../contexts/InternationalizationContext";
+import { useThemeContext } from "../contexts/ThemeContext";
+
+//icons
+import Sun from "../components/icons/Sun";
+import Moon from "../components/icons/Moon";
 
 //style
 import style from "./PrimaryLayout.module.css";
@@ -24,6 +29,7 @@ const langsList = [
 
 function PrimaryLayout({ children }: Props) {
   const { lang, setLang } = useInternationalizationContext();
+  const { isDarkModeActive, setIsDarkModeActive } = useThemeContext();
   return (
     <main className={style.main}>
       <select
@@ -37,6 +43,17 @@ function PrimaryLayout({ children }: Props) {
           </option>
         ))}
       </select>
+      <button
+        onClick={() => setIsDarkModeActive(!isDarkModeActive)}
+        style={{
+          borderRadius: "50%",
+          padding: 4,
+          cursor: "pointer",
+          backgroundColor: isDarkModeActive ? "#000" : "rgb(111,190,248)",
+        }}
+      >
+        {isDarkModeActive ? <Moon /> : <Sun />}
+      </button>
       <div className={style.card}>{children}</div>
     </main>
   );

@@ -1,7 +1,7 @@
 //library
 import { createContext } from "react";
 
-type InternationalizationContextType = {
+export type InternationalizationContextType = {
   lang: string;
   setLang: (lang: string) => void;
   translate: (term: string) => string;

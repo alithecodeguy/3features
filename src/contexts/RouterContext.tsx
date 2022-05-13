@@ -1,7 +1,12 @@
 //library
 import { createContext } from "react";
 
-const RouterContext = createContext({
+type RouterContextType = {
+  location: string;
+  push: (lang: string) => void;
+};
+
+const RouterContext = createContext<RouterContextType>({
   location: "",
   push: (to: string) => {},
 });

@@ -1,8 +1,11 @@
 //library
-import { memo, ReactNode } from "react";
+import { ReactNode } from "react";
 
 //hook
 import { useInternationalizationContext } from "../contexts/InternationalizationContext";
+
+//style
+import style from "./PrimaryLayout.module.css";
 
 type Props = {
   children: ReactNode;
@@ -20,45 +23,23 @@ const langsList = [
 ];
 
 function PrimaryLayout({ children }: Props) {
-  const { lang, setLang, translate } = useInternationalizationContext();
+  const { lang, setLang } = useInternationalizationContext();
   return (
-    <main
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        paddingTop: 80,
-        gap: 20,
-        backgroundColor: "#ccc",
-        minHeight: "100vh",
-        overflow: "hidden",
-      }}
-    >
+    <main className={style.main}>
       <select
         value={lang}
         onChange={(e) => setLang(e.target.value)}
-        style={{ width: 100, height: 30 }}
+        className={style.comboBox}
       >
         {langsList.map((option) => (
-          <option value={option.value}>{option.label}</option>
+          <option key={option.value} value={option.value}>
+            {option.label}
+          </option>
         ))}
       </select>
-      <div
-        style={{
-          width: "100vw",
-          height: 100,
-          backgroundColor: "#fff",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          padding: 10,
-          gap: 10,
-        }}
-      >
-        {children}
-      </div>
+      <div className={style.card}>{children}</div>
     </main>
   );
 }
 
-export default memo(PrimaryLayout);
+export default PrimaryLayout;

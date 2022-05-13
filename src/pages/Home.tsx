@@ -7,26 +7,24 @@ import Link from "../components/router/Link";
 //hook
 import { useInternationalizationContext } from "../contexts/InternationalizationContext";
 
+//style
+import style from "./common.module.css";
+
+//types
 type Props = {};
 
 function Home({}: Props) {
   const { translate } = useInternationalizationContext();
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        gap: "10px",
-        justifyContent: "center",
-      }}
-    >
-      <span style={{ fontSize: 14 }}>
+    <section className={style.main}>
+      <span className={style.pageLabelContainer}>
         {`${translate("PageNameLabel")}`} : {`${translate("Home")}`}
       </span>
-      <span style={{ fontSize: 32 }}>{`${translate("Welcome")}`}</span>
+      <span className={style.welcomeContainer}>{`${translate(
+        "Welcome"
+      )}`}</span>
       <Link to="/about">about</Link>
-    </div>
+    </section>
   );
 }
 

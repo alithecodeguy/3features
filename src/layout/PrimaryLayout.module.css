@@ -1,0 +1,26 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 80px;
+  gap: 20px;
+  background-color: #ccc;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.comboBox {
+  width: 100px;
+  height: 30px;
+}
+
+.card {
+  width: 100vw;
+  height: 100px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+}

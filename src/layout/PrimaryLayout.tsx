@@ -8,6 +8,17 @@ type Props = {
   children: ReactNode;
 };
 
+const langsList = [
+  {
+    label: "فارسی",
+    value: "fa",
+  },
+  {
+    label: "English",
+    value: "en",
+  },
+];
+
 function PrimaryLayout({ children }: Props) {
   const { lang, setLang, translate } = useInternationalizationContext();
   return (
@@ -15,16 +26,26 @@ function PrimaryLayout({ children }: Props) {
       style={{
         display: "flex",
         flexDirection: "column",
+        alignItems: "center",
+        paddingTop: 80,
+        gap: 20,
         backgroundColor: "#ccc",
         minHeight: "100vh",
         overflow: "hidden",
       }}
     >
+      <select
+        value={lang}
+        onChange={(e) => setLang(e.target.value)}
+        style={{ width: 100, height: 30 }}
+      >
+        {langsList.map((option) => (
+          <option value={option.value}>{option.label}</option>
+        ))}
+      </select>
       <div
         style={{
-          marginTop: 80,
           width: "100vw",
-
           height: 100,
           backgroundColor: "#fff",
           display: "flex",
@@ -36,15 +57,16 @@ function PrimaryLayout({ children }: Props) {
       >
         {children}
       </div>
-      <label>
-        <input
+      {/* <label> */}
+
+      {/* <input
           checked={lang == "fa" ? true : false}
           type="checkbox"
           defaultChecked={true}
           onChange={() => setLang(lang == "en" ? "fa" : "en")}
         />
         {lang == "en" ? "fa" : "en"}
-      </label>
+      </label> */}
     </main>
   );
 }

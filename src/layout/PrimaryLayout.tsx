@@ -57,16 +57,6 @@ function PrimaryLayout({ children }: Props) {
       >
         {children}
       </div>
-      {/* <label> */}
-
-      {/* <input
-          checked={lang == "fa" ? true : false}
-          type="checkbox"
-          defaultChecked={true}
-          onChange={() => setLang(lang == "en" ? "fa" : "en")}
-        />
-        {lang == "en" ? "fa" : "en"}
-      </label> */}
     </main>
   );
 }

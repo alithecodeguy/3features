@@ -3,5 +3,5 @@
 ## All from scratch just with CRA
 
 <div align="center">
-    <img src="./demo.gif" width="250">
+    <img src="./demo.gif" width="450">
 </div>

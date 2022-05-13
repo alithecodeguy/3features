@@ -9,7 +9,7 @@ export type InternationalizationContextType = {
 
 const InternationalizationContext =
   createContext<InternationalizationContextType>({
-    lang: "en",
+    lang: "fa",
     setLang: (lang: string) => {},
     translate: (term: string) => "",
   });

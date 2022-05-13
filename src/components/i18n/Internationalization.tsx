@@ -16,7 +16,7 @@ type ContentType = {
 };
 
 export default function Internationalization({ children }: Props) {
-  const [lang, setLang] = useState<string>("en");
+  const [lang, setLang] = useState<string>("fa");
   const [content, setContent] = useState<ContentType>({});
   useEffect(() => {
     fetch(`./translate/${lang}.json`)

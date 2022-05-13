@@ -17,12 +17,14 @@ function PrimaryLayout({ children }: Props) {
         flexDirection: "column",
         backgroundColor: "#ccc",
         minHeight: "100vh",
+        overflow: "hidden",
       }}
     >
       <div
         style={{
           marginTop: 80,
           width: "100vw",
+
           height: 100,
           backgroundColor: "#fff",
           display: "flex",
@@ -36,11 +38,12 @@ function PrimaryLayout({ children }: Props) {
       </div>
       <label>
         <input
+          checked={lang == "fa" ? true : false}
           type="checkbox"
           defaultChecked={true}
           onChange={() => setLang(lang == "en" ? "fa" : "en")}
         />
-        {`${translate("changeLanguageButtonLabel") as string}`}
+        {lang == "en" ? "fa" : "en"}
       </label>
     </main>
   );

@@ -1,31 +1,24 @@
-import { useState, useContext, memo } from "react";
-import InternationalizationContext from "../contexts/InternationalizationContext";
+//library
+import { memo, ReactNode } from "react";
 
-// import translate from "../contexts/InternationalizationContext";
+//hook
+import { useInternationalizationContext } from "../contexts/InternationalizationContext";
 
 type Props = {
-  children: JSX.Element;
+  children: ReactNode;
 };
 
 function PrimaryLayout({ children }: Props) {
-  const internationalizationContext = useContext(InternationalizationContext);
-  // console.log("xxx");
-  // console.log(internationalizationContext);
+  const { lang, setLang, translate } = useInternationalizationContext();
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
       <label>
         <input
           type="checkbox"
           defaultChecked={true}
-          onChange={() =>
-            internationalizationContext.setLang(
-              internationalizationContext.lang == "en" ? "fa" : "en"
-            )
-          }
+          onChange={() => setLang(lang == "en" ? "fa" : "en")}
         />
-        {`${internationalizationContext.translate(
-          "changeLanguageButtonLabel"
-        )}`}
+        {`${translate("changeLanguageButtonLabel") as string}`}
       </label>
       <div>{children}</div>
     </div>
